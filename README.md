@@ -1,5 +1,7 @@
 # YouTube Video Downloader
 
+> *These instructions were made for users unfamiliar to Google Colab.*
+
 This tool downloads music videos in high quality (MP4) or high-quality MP3 audio.
 
 ## How To Use
