@@ -83,11 +83,7 @@ def download_media(url: str, mode: str, progress_bar, status_text):
 
             if mode == "video":
                 ydl_opts = {
-                    "format": (
-                        "bestvideo[vcodec^=avc1]+bestaudio[acodec^=mp4a]/"
-                        "bestvideo[vcodec^=avc1]+bestaudio/"
-                        "bestvideo+bestaudio/best"
-                    ),
+                    "format": "best[ext=mp4]/best",
                     "outtmpl": os.path.join(temp_dir, f"{out_name}.%(ext)s"),
                     "progress_hooks": [progress_hook],
                     "keep_video": True,
@@ -221,6 +217,8 @@ st.write(
     "Download music videos as high-quality MP4 files or extract "
     "high-quality MP3 audio."
 )
+
+st.write(yt_dlp.version.__version__)
 
 url = st.text_input(
     "Video URL",
